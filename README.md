@@ -42,6 +42,12 @@ And make sure that the file has our expected contents:
     $ cat file1.txt
     contents of file1.txt go here!
 
+## Customizing data file contents
+
+This is meant as a simple demonstration. If you want to change the example data
+files in this application, you will find them in the
+[templates/configmap.yaml](templates/configmap.yaml) as plain text.
+
 ## License
 
 This project is licensed under the MIT License. Please see the
