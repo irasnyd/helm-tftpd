@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "tftp.fullname" . }}
+  labels:
+{{ include "tftp.labels" . | indent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: tftpd
+      protocol: UDP
+      name: tftpd
+  selector:
+    app.kubernetes.io/name: {{ include "tftp.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}

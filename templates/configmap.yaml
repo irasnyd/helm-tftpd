@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "tftp.fullname" . }}
+  labels:
+{{ include "tftp.labels" . | indent 4 }}
+data:
+  file1.txt: |
+    contents of file1.txt go here!
+
+  file2.txt: |
+    contents of file2.txt go here!
+
+  file3.txt: |
+    contents of file3.txt go here!
