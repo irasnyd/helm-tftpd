@@ -5,8 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: "jumanjiman/tftp-hpa"
-  tag: "6.04_pre1-r2-20190420T1708-git-6cccea7"
+  repository: "ubuntu"
+  tag: "19.04"
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []

@@ -27,16 +27,10 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command:
-            - in.tftpd
-            - -L
-            - --verbose
-            - --verbose
-            - --verbose
-            - --verbose
-            - -u
-            - tftp
-            - --secure
-            - /tftpboot
+            - "/bin/bash"
+            - "-c"
+            - >
+              apt -y install atftpd && atftpd --logfile /dev/stdout --no-fork --verbose 3 --daemon /tftpboot
           ports:
             - name: tftpd
               containerPort: 69
